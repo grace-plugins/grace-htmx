@@ -21,8 +21,9 @@ group "org.graceframework.plugins"
 
 apply plugin: "eclipse"
 apply plugin: "idea"
-apply plugin: "java-library"
-apply plugin: "org.graceframework.grace-plugin"
+apply plugin: "groovy"
+// apply plugin: "java-library"
+// apply plugin: "org.graceframework.grace-plugin"
 apply plugin: "io.github.gradle-nexus.publish-plugin"
 apply plugin: "maven-publish"
 apply plugin: "signing"
@@ -33,11 +34,12 @@ repositories {
 }
 
 dependencies {
-    compileOnly "org.springframework.boot:spring-boot-autoconfigure"
+    compileOnly "org.springframework.boot:spring-boot-autoconfigure:2.7.10"
     compileOnly "javax.servlet:javax.servlet-api:4.0.1"
-    compileOnly "org.graceframework:grace-boot"
-    implementation "org.graceframework:grace-web-common"
-    profile "org.graceframework.profiles:plugin"
+    // compileOnly "org.graceframework:grace-boot:$graceVersion"
+    compileOnly "org.graceframework:grace-core:$graceVersion"
+    compileOnly "org.graceframework:grace-web-common:$graceVersion"
+    // profile "org.graceframework.profiles:plugin"
 }
 
 tasks.withType(Sign) {
@@ -54,7 +56,7 @@ tasks.withType(Test) {
     useJUnitPlatform()
 }
 
-bootJar.enabled = false
+// bootJar.enabled = false
 
 java {
     toolchain {

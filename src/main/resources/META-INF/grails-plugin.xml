@@ -1,0 +1,3 @@
+<plugin name='htmx'>
+  <type>org.graceframework.plugins.htmx.HtmxGrailsPlugin</type>
+</plugin>
