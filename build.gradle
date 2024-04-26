@@ -117,7 +117,7 @@ publishing {
                 scm {
                     connection = 'scm:git:git://github.com/grace-plugins/grace-htmx.git'
                     developerConnection = 'scm:git:ssh://github.com:grace-plugins/grace-htmx.git'
-                    url = 'https://github.com/grace-plugins/grace-htmx/tree/main'
+                    url = 'https://github.com/grace-plugins/grace-htmx'
                 }
             }
         }
