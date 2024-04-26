@@ -1,6 +1,6 @@
 # Grace with Htmx
 
-Grace Plugin for using Grace app with htmx.
+Grace Plugin for using Grace/Grails app with htmx.
 
 
 ## Usage
@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation "org.graceframework.plugins:htmx:0.0.1-SNAPSHOT"
+    implementation "org.graceframework.plugins:htmx:VERSION"
 }
 ```
 
@@ -71,9 +71,10 @@ cd grace-htmx
 ./gradlew publishToMavenLocal
 ```
 
-## Support Grace Version
+## Support Version
 
-* Grace 2022.0.0
+* Grace 2022.0.0+
+* Grails 3.0+
 
 ## Roadmap
 
@@ -95,3 +96,4 @@ This plugin is available as open source under the terms of the [APACHE LICENSE, 
 - [Grace Plugins](https://github.com/grace-plugins)
 - [Grace Htmx Plugin](https://github.com/grace-plugins/grace-htmx)
 - [Grace Htmx TodoMVC](https://github.com/grace-guides/grace-htmx-todomvc)
+- [Grails Htmx TodoMVC](https://github.com/rainboyan/grails-htmx-todomvc)
