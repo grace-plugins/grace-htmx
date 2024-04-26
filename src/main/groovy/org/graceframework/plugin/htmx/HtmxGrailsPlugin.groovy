@@ -26,7 +26,7 @@ import grails.util.GrailsUtil
  */
 class HtmxGrailsPlugin extends Plugin {
 
-    def version = '0.1.0'
+    def version = '0.2.0'
     def grailsVersion = GrailsUtil.getGrailsVersion()
     def dependsOn = [controllers: grailsVersion]
     def observe = ['controllers']
