@@ -1,4 +1,4 @@
-package org.graceframework.plugin.htmx
+package org.graceframework.plugins.htmx
 
 import grails.boot.Grails
 import grails.plugins.metadata.PluginSource
