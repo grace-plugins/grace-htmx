@@ -1,5 +1,5 @@
 /*
- * Copyright 2022-2023 the original author or authors.
+ * Copyright 2022-2024 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.graceframework.plugins.htmx;
+package org.graceframework.plugins.htmx
 
-import grails.web.mime.MimeType;
+import javax.servlet.http.HttpServletResponse
+
+import groovy.transform.CompileStatic
 
 /**
- * {@link MimeType} for htmx
+ * Extends the {@link HttpServletResponse} object with new methods for handling htmx Response
  *
  * @author Michael Yan
  * @since 0.0.1
  */
-public class HtmxMimeType {
+@CompileStatic
+class HttpServletResponseExtension {
 
-    public static final String HTMX_FORMAT = "htmx";
-
-    public static final MimeType HTMX = new MimeType("text/html+htmx", "htmx");
+    static HtmxResponse getHtmx(HttpServletResponse response) {
+        new HtmxResponse(response)
+    }
 
 }
