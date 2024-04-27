@@ -61,6 +61,25 @@ response.htmx.trigger = 'itemAdded'
 
 ```
 
+If you use [`respond`](https://grails.github.io/legacy-grails-doc/4.0.0/ref/Controllers/respond.html) method introduced in Grails 2.3. The respond method tries to produce the most appropriate response for the requested content type (JSON, XML, HTML etc.)
+
+For example given the show action:
+
+```groovy
+def show(Book book) {
+    respond book
+}
+```
+
+You could supply a `show.htmx.gsp` file to render the HTMX:
+
+```html
+<div id="${book.id}">
+    <h1>${book.title}</h1>
+    <p>${book.description}</p>
+</div>
+```
+
 ## Example
 
 * [Grace Htmx TodoMVC](https://github.com/grace-guides/grace-htmx-todomvc)
