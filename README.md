@@ -63,6 +63,17 @@ response.htmx.trigger = 'itemAdded'
 
 If you use [`respond`](https://grails.github.io/legacy-grails-doc/4.0.0/ref/Controllers/respond.html) method introduced in Grails 2.3. The respond method tries to produce the most appropriate response for the requested content type (JSON, XML, HTML etc.)
 
+You can [configure mime types](https://grails.github.io/legacy-grails-doc/4.0.0/guide/theWebLayer.html#contentNegotiation) for Htmx.
+
+Update the `app/conf/application.yml`:
+
+```yml
+grails:
+    mime:
+        types:
+            htmx: text/html
+```
+
 For example given the show action:
 
 ```groovy
