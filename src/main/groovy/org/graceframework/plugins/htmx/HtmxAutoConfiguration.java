@@ -25,6 +25,8 @@ import org.springframework.boot.web.servlet.filter.OrderedFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import grails.web.mime.MimeTypeProvider;
+
 /**
  * {@link EnableAutoConfiguration Auto-configuration} for Htmx Plugin.
  *
@@ -43,6 +45,11 @@ public class HtmxAutoConfiguration {
         registration.setDispatcherTypes(DispatcherType.REQUEST, DispatcherType.ASYNC);
         registration.setOrder(OrderedFilter.REQUEST_WRAPPER_FILTER_MAX_ORDER + 100);
         return registration;
+    }
+
+    @Bean
+    public MimeTypeProvider htmxMimeTypeProvider() {
+        return new HtmxMimeTypeProvider();
     }
 
 }
