@@ -27,6 +27,6 @@ public class HtmxMimeType {
 
     public static final String HTMX_FORMAT = "htmx";
 
-    public static final MimeType HTMX = new MimeType("text/html+htmx", "htmx");
+    public static final MimeType HTMX = new MimeType("text/html", "htmx");
 
 }
