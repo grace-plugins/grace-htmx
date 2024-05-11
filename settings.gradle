@@ -1,1 +1,3 @@
-rootProject.name = 'htmx'
+rootProject.name = 'grace-htmx'
+
+include 'plugin'

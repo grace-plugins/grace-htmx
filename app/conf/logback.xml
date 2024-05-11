@@ -15,5 +15,6 @@
         <appender-ref ref="STDOUT" />
     </root>
     <logger name="org.hibernate.orm.deprecation" level="error" />
-    <logger name="org.graceframework.plugin.htmx.Application" level="debug" />
+    <logger name="org.grails.plugins.support" level="debug" />
+    <logger name="grace.demos.Application" level="debug" />
 </configuration>

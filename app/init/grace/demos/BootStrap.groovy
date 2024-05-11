@@ -1,4 +1,4 @@
-package org.graceframework.plugins.htmx
+package grace.demos
 
 class BootStrap {
 
