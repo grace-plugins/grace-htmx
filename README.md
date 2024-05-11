@@ -1,6 +1,7 @@
 [![Main branch build status](https://github.com/grace-plugins/grace-htmx/workflows/Grace%20CI/badge.svg?style=flat)](https://github.com/grace-plugins/grace-htmx/actions?query=workflow%3A%Grace+CI%22)
 [![Apache 2.0 license](https://img.shields.io/badge/License-APACHE%202.0-green.svg?logo=APACHE&style=flat)](https://opensource.org/licenses/Apache-2.0)
 [![Latest version on Maven Central](https://img.shields.io/maven-central/v/org.graceframework.plugins/htmx.svg?label=Maven%20Central&logo=apache-maven&style=flat)](https://search.maven.org/search?q=g:org.graceframework.plugins)
+[![Grace on X](https://img.shields.io/twitter/follow/graceframework?style=social)](https://twitter.com/graceframework)
 
 # Grace with Htmx
 
@@ -126,7 +127,7 @@ This plugin is available as open source under the terms of the [APACHE LICENSE, 
 
 ## Links
 
-- [Grace Website](https://github.com/graceframework/grace-framework)
+- [Grace Framework](https://github.com/graceframework/grace-framework)
 - [Grace Plugins](https://github.com/grace-plugins)
 - [Grace Htmx Plugin](https://github.com/grace-plugins/grace-htmx)
 - [Grace Htmx TodoMVC](https://github.com/grace-guides/grace-htmx-todomvc)
