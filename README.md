@@ -92,9 +92,26 @@ You could supply a `show.htmx.gsp` file to render the HTMX:
 </div>
 ```
 
+If you use `asset-pipeline` plugin, this plugin already includes `htmx.js`, `_hyperscript.js`,
+so you can add `htmx.js` to the `app/assets/application.js`,
+
+```javascript
+//= require _hyperscript
+//= require htmx
+//= require_self
+```
+
+Also, you can use `asset` tag in the GSP,
+
+```HTML
+<asset:javascript src="_hyperscript.js"/>
+<asset:javascript src="htmx.js"/>
+```
+
+
 ## Example
 
-* [Grace Htmx TodoMVC](https://github.com/grace-guides/grace-htmx-todomvc)
+* [Grace Htmx TodoMVC](https://github.com/grace-guides/gs-htmx-todomvc)
 
 ## Development
 
