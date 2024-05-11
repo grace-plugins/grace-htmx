@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: ['8']
+        java: ['11']
     env:
       GIT_USER_NAME: rainboyan
       GIT_USER_EMAIL: rain@rainboyan.com
@@ -62,9 +62,6 @@ jobs:
         if: steps.secring.outcome == 'success'
         uses: gradle/gradle-build-action@v3
         env:
-          GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GRADLE_ENTERPRISE_ACCESS_KEY }}
-          GRADLE_ENTERPRISE_BUILD_CACHE_NODE_USER: ${{ secrets.GRADLE_ENTERPRISE_BUILD_CACHE_NODE_USER }}
-          GRADLE_ENTERPRISE_BUILD_CACHE_NODE_KEY: ${{ secrets.GRADLE_ENTERPRISE_BUILD_CACHE_NODE_KEY }}
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
           SONATYPE_NEXUS_URL: ${{ secrets.SONATYPE_NEXUS_URL }}
@@ -73,4 +70,4 @@ jobs:
           SIGNING_PASSPHRASE: ${{ secrets.SIGNING_PASSPHRASE }}
           SECRING_FILE: ${{ secrets.SECRING_FILE }}
         with:
-          arguments: -Psigning.secretKeyRingFile=${{ github.workspace }}/secring.gpg publishToSonatype closeAndReleaseSonatypeStagingRepository
+          arguments: -Psigning.secretKeyRingFile=${{ github.workspace }}/secring.gpg :plugin:publishToSonatype closeAndReleaseSonatypeStagingRepository
