@@ -79,6 +79,7 @@ assets {
         targetLanguage: 'ES5',
         optimizationLevel: 'SIMPLE'
     ]
+    packagePlugin = true
 }
 
 bootJar.enabled = false
