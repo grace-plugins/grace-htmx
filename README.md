@@ -92,11 +92,11 @@ You could supply a `show.htmx.gsp` file to render the HTMX:
 </div>
 ```
 
-If you use `asset-pipeline` plugin, this plugin already includes `htmx.js`, `_hyperscript.js`,
+If you use `asset-pipeline` plugin, this plugin already includes `htmx.js`, `hyperscript.js`,
 so you can add `htmx.js` to the `app/assets/application.js`,
 
 ```javascript
-//= require _hyperscript
+//= require hyperscript
 //= require htmx
 //= require_self
 ```
@@ -104,7 +104,7 @@ so you can add `htmx.js` to the `app/assets/application.js`,
 Also, you can use `asset` tag in the GSP,
 
 ```HTML
-<asset:javascript src="_hyperscript.js"/>
+<asset:javascript src="hyperscript.js"/>
 <asset:javascript src="htmx.js"/>
 ```
 
