@@ -66,6 +66,7 @@ jar {
         "Implementation-Version": projectVersion,
         "Implementation-Vendor": 'Grace Plugins')
     enabled = true
+    archiveBaseName = projectName
     archiveClassifier.set('plugin')
     includeEmptyDirs = false
 }
