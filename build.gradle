@@ -8,7 +8,7 @@ buildscript {
         classpath "io.github.gradle-nexus:publish-plugin:1.3.0"
         classpath "org.graceframework:grace-gradle-plugin:$graceVersion"
         classpath "com.github.erdi:webdriver-binaries-gradle-plugin:3.2"
-        classpath "org.graceframework.plugins:asset-pipeline-gradle:5.2.4"
+        classpath "org.graceframework.plugins:asset-pipeline-gradle:5.2.6"
     }
 }
 
@@ -75,7 +75,7 @@ dependencies {
     runtimeOnly "jakarta.xml.bind:jakarta.xml.bind-api:2.3.3"
     runtimeOnly "jakarta.el:jakarta.el-api:3.0.3"
     runtimeOnly "org.glassfish:jakarta.el:3.0.4"
-    runtimeOnly "org.graceframework.plugins:asset-pipeline-plugin:5.2.4"
+    runtimeOnly "org.graceframework.plugins:asset-pipeline-plugin:5.2.6"
     testImplementation "io.micronaut:micronaut-inject-groovy"
     testImplementation "org.graceframework:grace-test-support"
     testImplementation "org.mockito:mockito-core"
