@@ -104,8 +104,8 @@ publishing {
             from components.java
 
             pom {
-                name = "Grace Turbo Plugin"
-                description = "Grace Plugin for using Turbo with Grace."
+                name = "Grace Htmx Plugin"
+                description = "Grace Plugin for using Grace app with htmx."
                 url = 'https://github.com/grace-plugins/grace-htmx'
                 licenses {
                     license {
