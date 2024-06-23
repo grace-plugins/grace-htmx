@@ -108,6 +108,35 @@ Also, you can use `asset` tag in the GSP,
 <asset:javascript src="htmx.js"/>
 ```
 
+> [!TIP]
+> Add `hyperscript.js` to `assets.minifyOptions.excludes` If your app has an error when compiling assets.
+
+
+```bash
+hyperscript.unminified.js:85:24: ERROR - [JSC_PARSE_ERROR] Parse error. '(' expected
+  85|         static OP_TABLE = {
+                              ^
+
+1 error(s), 0 warning(s)
+Closure uglify JS Exception
+asset.pipeline.processors.MinifyException: [JSC_PARSE_ERROR. Parse error. '(' expected at hyperscript.unminified.js line 85 : 24]
+        at asset.pipeline.processors.ClosureCompilerProcessor.process(ClosureCompilerProcessor.groovy:81)
+        at asset.pipeline.processors.ClosureCompilerProcessor$process.call(Unknown Source)
+        at asset.pipeline.AssetCompiler$_compile_closure4.doCall(AssetCompiler.groovy:171)
+```
+
+```gradle
+assets {
+    minifyJs = true
+    minifyCss = true
+    minifyOptions = [
+        excludes: ['hyperscript.js'],
+        languageMode: 'ES6',
+        targetLanguage: 'ES6', //Can go from ES6 to ES5 for those bleeding edgers
+        optimizationLevel: 'SIMPLE' //Or ADVANCED or WHITESPACE_ONLY
+    ]
+}
+```
 
 ## Example
 
