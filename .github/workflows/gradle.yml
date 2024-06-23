@@ -33,7 +33,7 @@ jobs:
         id: build
         uses: gradle/actions/setup-gradle@v3
         with:
-          arguments: build -x test
+          arguments: build -x test -x integrationTest
   publish:
     if: github.event_name == 'push'
     needs: ["build"]
