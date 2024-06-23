@@ -73,11 +73,12 @@ jar {
 
 assets {
     assetsPath = 'app/assets'
-    minifyJs = false
+    minifyJs = true
     minifyCss = true
     minifyOptions = [
-        languageMode: 'ES5',
-        targetLanguage: 'ES5',
+        excludes: ['htmx.js', 'hyperscript.js'],
+        languageMode: 'ES6',
+        targetLanguage: 'ES6',
         optimizationLevel: 'SIMPLE'
     ]
     packagePlugin = true
