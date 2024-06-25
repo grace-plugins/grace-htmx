@@ -50,6 +50,10 @@ tasks.withType(Test) {
     useJUnitPlatform()
 }
 
+tasks.withType(Jar) {
+    archiveBaseName = projectName
+}
+
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
@@ -65,8 +69,6 @@ jar {
         "Implementation-Title": "Grace Htmx Plugin",
         "Implementation-Version": projectVersion,
         "Implementation-Vendor": 'Grace Plugins')
-    enabled = true
-    archiveBaseName = projectName
     archiveClassifier.set('plugin')
     includeEmptyDirs = false
 }
