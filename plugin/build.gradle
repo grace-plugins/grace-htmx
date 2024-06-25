@@ -105,7 +105,7 @@ publishing {
 
             from components.java
 
-            artifact source: "${project.sourceSets.main.groovy.outputDir}/META-INF/grails-plugin.xml",
+            artifact source: "${project.buildDir}/classes/groovy/main/META-INF/grails-plugin.xml",
                 classifier: "plugin",
                 extension: 'xml'
             pom {
