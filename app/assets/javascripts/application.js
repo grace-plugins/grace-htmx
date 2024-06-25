@@ -7,5 +7,4 @@
 //
 //= require jquery.min
 //= require bootstrap.bundle
-//= require htmx
 //= require_self
