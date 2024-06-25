@@ -176,5 +176,5 @@ This plugin is available as open source under the terms of the [APACHE LICENSE, 
 - [Grace Framework](https://github.com/graceframework/grace-framework)
 - [Grace Plugins](https://github.com/grace-plugins)
 - [Grace Htmx Plugin](https://github.com/grace-plugins/grace-htmx)
-- [Grace Htmx TodoMVC](https://github.com/grace-guides/grace-htmx-todomvc)
+- [Grace Htmx TodoMVC](https://github.com/grace-guides/gs-htmx-todomvc)
 - [Grails Htmx TodoMVC](https://github.com/rainboyan/grails-htmx-todomvc)
