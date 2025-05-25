@@ -1,0 +1,105 @@
+== Getting Started
+
+Add dependency to the `build.gradle`,
+
+[source,groovy]
+----
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.graceframework.plugins:htmx:VERSION"
+}
+----
+
+Htmx plugin supports controller-specific `withFormat()` method,
+
+[source,groovy]
+----
+class BookController {
+
+    def list() {
+        def books = Book.list()
+
+        withFormat {
+            htmx {
+                render(template: "book", model: [bookList: books])
+            }
+            json {
+                render books as JSON
+            }
+        }
+    }
+}
+----
+
+Also, this plugin supports extendsions for Grails Request and Response,
+
+[source,groovy]
+----
+// You can get htmx request headers from Grails Request
+
+request.htmx.boosted == request.getHeader('HX-Boosted')
+request.htmx.target  == request.getHeader('HX-Target')
+
+// Check htmx request?
+if (request.htmx as boolean) { // or use request.isHtmx()
+    template = 'book-detail'
+}
+
+// You can set htmx response headers in Grails
+
+response.htmx.trigger = 'itemAdded'
+----
+
+If you use https://grails.github.io/legacy-grails-doc/4.0.0/ref/Controllers/respond.html[`respond`] method introduced in Grails 2.3. The respond method tries to produce the most appropriate response for the requested content type (JSON, XML, HTML etc.)
+
+You can configure https://grails.github.io/legacy-grails-doc/4.0.0/guide/theWebLayer.html#contentNegotiation[Mime Types] for Htmx.
+
+Update the `app/conf/application.yml`:
+
+[source,yml]
+----
+grails:
+    mime:
+        types:
+            htmx: text/html
+----
+
+For example given the show action:
+
+[source,groovy]
+----
+def show(Book book) {
+    respond book
+}
+----
+
+You could supply a `show.htmx.gsp` file to render the HTMX:
+
+[source,html]
+----
+<div id="${book.id}">
+    <h1>${book.title}</h1>
+    <p>${book.description}</p>
+</div>
+----
+
+If you use `asset-pipeline` plugin, this plugin already includes `htmx.js`, `hyperscript.js`,
+so you can add `htmx.js` to the `app/assets/application.js`,
+
+[source,javascript]
+----
+//= require hyperscript
+//= require htmx
+//= require_self
+----
+
+Also, you can use `asset` tag in the GSP,
+
+[source,html]
+----
+<asset:javascript src="hyperscript.js"/>
+<asset:javascript src="htmx.js"/>
+----

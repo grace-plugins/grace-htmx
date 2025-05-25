@@ -1,0 +1,95 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.graceframework:grace-docs:$graceVersion"
+    }
+}
+
+apply plugin: 'java-library'
+
+def DOCUMENTATION_GROUP = 'Documentation'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    documentation
+}
+
+dependencies {
+    documentation 'info.picocli:picocli:3.8.0'
+    documentation 'org.fusesource.jansi:jansi:1.18'
+    documentation 'jline:jline:2.14.6'
+    documentation 'com.github.javaparser:javaparser-core:3.15.14'
+    documentation "org.codehaus.groovy:groovy:$groovyVersion"
+    documentation "org.codehaus.groovy:groovy-ant:$groovyVersion"
+    documentation "org.codehaus.groovy:groovy-cli-picocli:$groovyVersion"
+}
+
+def cleanTask = project.tasks.findByName('clean')
+if (cleanTask == null) {
+    task clean(type: Delete) {
+        delete(buildDir)
+    }
+}
+else {
+    cleanTask.doLast {
+        ant.delete(dir: 'build/docs')
+    }
+}
+
+tasks.withType(Groovydoc) {
+    group = DOCUMENTATION_GROUP
+    docTitle = "Grace HTMX Plugin - ${project.version}"
+    destinationDir = project.file('build/docs/api')
+    def files = []
+    project.rootProject.subprojects
+            .findAll { !it.name != 'docs' && !it.name.startsWith('examples') }
+            .each { subproject ->
+                if(subproject.file('src/main/groovy').exists()) {
+                    files += subproject.files('src/main/groovy')
+                }
+            }
+    if (project.file('src/main/groovy').exists()) {
+        files += project.files('src/main/groovy')
+    }
+    source = files
+    classpath += configurations.documentation
+}
+
+task publishGuide(type: grails.doc.gradle.PublishGuide) {
+    group = DOCUMENTATION_GROUP
+    description = 'Generate Guide'
+    dependsOn groovydoc
+
+    sourceRepo = "https://github.com/grace-plugins/grace-htmx/edit/main/docs"
+    sourceDir = project.file('docs')
+    resourcesDir = project.file('docs/resources')
+    targetDir = project.file("${buildDir}/docs")
+    propertiesFiles = [project.file('docs/resources/doc.properties')]
+    asciidoc = true
+    properties = [
+            'safe': 'UNSAFE',
+            'version': project.version,
+            'api': '../api',
+            'sourceDir': rootProject.projectDir.absolutePath,
+            'sourcedir': rootProject.projectDir.absolutePath,
+            'groovyapi': 'http://docs.groovy-lang.org/latest/html/gapi/'
+    ]
+}
+
+task docs(dependsOn:[groovydoc, publishGuide]) {
+    group = DOCUMENTATION_GROUP
+}
+
+def assembleTask = project.tasks.findByName('assemble')
+if (assembleTask == null) {
+    task assemble(dependsOn: docs, type:Zip) {
+        baseName = "${project.name}-${project.version}"
+        destinationDir = new File(project.buildDir, 'distributions')
+        from project.files("${buildDir}/docs")
+    }
+}

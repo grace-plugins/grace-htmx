@@ -23,6 +23,7 @@ apply plugin: "org.graceframework.grace-web"
 apply plugin: "com.github.erdi.webdriver-binaries"
 apply plugin: "org.graceframework.asset-pipeline"
 apply plugin: "org.graceframework.grace-gsp"
+apply from: 'gradle/docs.gradle'
 
 repositories {
     mavenCentral()
