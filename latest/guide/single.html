@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <title>Grace HTMX Plugin 0.9.0-SNAPSHOT</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8" />
+        <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8" />
+    <script type="text/javascript">
+function addJsClass(el) {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+    </head>
+
+    <body class="body" onload="addJsClass();">
+        <div id="navigation">
+            <div class="navHeader">
+                
+                <span id="logo">
+                    <a href="https://graceframework.org" title="Go to Grace Framework Website">
+                        <img src="../img/grace.svg" alt="Grace Framework" />
+                    </a>
+                </span>
+                
+                <div class="docHeader">
+                    <h1 class="docTitle">Grace HTMX Plugin</h1>
+                    <h3 class="docSubTitle">Grace Plugin for using Grace app with HTMX</h3>
+                    <span class="docVersion">0.9.0-SNAPSHOT</span>
+                </div>
+            </div>
+            <div class="navLinks">
+                <ul>
+                    <li>
+                        <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                            <a href="../guide/index.html" class="button">Table of contents</a>
+                            <div id="nav-summary-childs" style="display:none;">
+                                
+                                <div class="toc-item" style="margin-left:0"><a href="#introduction"><strong>1</strong><span>Introduction</span></a></div>
+                                
+                                <div class="toc-item" style="margin-left:0"><a href="#usage"><strong>2</strong><span>Usage</span></a></div>
+                                
+                            </div>
+                        </div>
+                    </li>
+                    <li class="separator selected">
+                        <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+                    </li>
+                    <li class="separator selected">
+                        <a id="ref-button" href="../api/index.html">API Docs</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <table id="colset" cellpadding="0" cellspacing="0">
+            <tr>
+                <td id="col1">
+                    <div id="main" class="corner-all">
+
+                        <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                        <div class="project">
+                            <h1>Grace HTMX Plugin</h1>
+                            <p><strong>Authors:</strong> Michael Yan</p>
+                            <p><strong>Version:</strong> 0.9.0-SNAPSHOT</p>
+                            
+                        </div>
+
+                        
+                        <div id="table-of-content">
+                            <h2>Table of Contents</h2>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#introduction"><strong>1</strong><span>Introduction</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#usage"><strong>2</strong><span>Usage</span></a></div>
+                            
+                            <div style="clear:both" ></div>
+                        </div>
+                        
+                        
+
+<h1 id="introduction"><a class="anchor" href="#introduction"></a>1 Introduction</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grace-plugins/grace-htmx/edit/main/docs/guide/introduction.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="paragraph">
+<p>Grace Plugin for using Grace app with HTMX.</p>
+</div>
+
+
+<h1 id="usage"><a class="anchor" href="#usage"></a>2 Usage</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grace-plugins/grace-htmx/edit/main/docs/guide/usage.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="sect1">
+<h2 id="_getting_started">Getting Started</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Add dependency to the <code>build.gradle</code>,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="groovy">repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation <span class="string"><span class="delimiter">&quot;</span><span class="content">org.graceframework.plugins:htmx:VERSION</span><span class="delimiter">&quot;</span></span>
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Htmx plugin supports controller-specific <code>withFormat()</code> method,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="groovy"><span class="type">class</span> <span class="class">BookController</span> {
+
+    <span class="keyword">def</span> <span class="function">list</span>() {
+        <span class="keyword">def</span> books = <span class="predefined-type">Book</span>.list()
+
+        withFormat {
+            htmx {
+                render(<span class="key">template</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">book</span><span class="delimiter">&quot;</span></span>, <span class="key">model</span>: [<span class="key">bookList</span>: books])
+            }
+            json {
+                render books <span class="keyword">as</span> JSON
+            }
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also, this plugin supports extendsions for Grails Request and Response,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="groovy"><span class="comment">// You can get htmx request headers from Grails Request</span>
+
+request.htmx.boosted == request.getHeader(<span class="string"><span class="delimiter">'</span><span class="content">HX-Boosted</span><span class="delimiter">'</span></span>)
+request.htmx.target  == request.getHeader(<span class="string"><span class="delimiter">'</span><span class="content">HX-Target</span><span class="delimiter">'</span></span>)
+
+<span class="comment">// Check htmx request?</span>
+<span class="keyword">if</span> (request.htmx <span class="keyword">as</span> <span class="type">boolean</span>) { <span class="comment">// or use request.isHtmx()</span>
+    template = <span class="string"><span class="delimiter">'</span><span class="content">book-detail</span><span class="delimiter">'</span></span>
+}
+
+<span class="comment">// You can set htmx response headers in Grails</span>
+
+response.htmx.trigger = <span class="string"><span class="delimiter">'</span><span class="content">itemAdded</span><span class="delimiter">'</span></span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you use <a href="https://grails.github.io/legacy-grails-doc/4.0.0/ref/Controllers/respond.html"><code>respond</code></a> method introduced in Grails 2.3. The respond method tries to produce the most appropriate response for the requested content type (JSON, XML, HTML etc.)</p>
+</div>
+<div class="paragraph">
+<p>You can configure <a href="https://grails.github.io/legacy-grails-doc/4.0.0/guide/theWebLayer.html#contentNegotiation">Mime Types</a> for Htmx.</p>
+</div>
+<div class="paragraph">
+<p>Update the <code>app/conf/application.yml</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="yml"><span class="key">grails</span>:
+    <span class="key">mime</span>:
+        <span class="key">types</span>:
+            <span class="key">htmx</span>: <span class="string"><span class="content">text/html</span></span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example given the show action:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="groovy"><span class="keyword">def</span> <span class="function">show</span>(<span class="predefined-type">Book</span> book) {
+    respond book
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You could supply a <code>show.htmx.gsp</code> file to render the HTMX:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="html"><span class="tag">&lt;div</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">${book.id}</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>${book.title}<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p&gt;</span>${book.description}<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you use <code>asset-pipeline</code> plugin, this plugin already includes <code>htmx.js</code>, <code>hyperscript.js</code>,
+so you can add <code>htmx.js</code> to the <code>app/assets/application.js</code>,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="javascript"><span class="comment">//= require hyperscript</span>
+<span class="comment">//= require htmx</span>
+<span class="comment">//= require_self</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also, you can use <code>asset</code> tag in the GSP,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="html"><span class="tag">&lt;asset:javascript</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">hyperscript.js</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;asset:javascript</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">htmx.js</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+
+                    </div>
+                </td>
+                <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+            </tr>
+        </table>
+
+        <div id="footer">
+            Copyright &copy; 2023-2025 Michael Yan. The content is licensed under a Creative Commons Attribution 4.0 International (CC BY SA 4.0) license.
+            
+        </div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+    </body>
+</html>
