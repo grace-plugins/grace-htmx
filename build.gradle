@@ -42,33 +42,32 @@ grails {
 dependencies {
     developmentOnly('org.springframework.boot:spring-boot-devtools')
     console "org.graceframework:grace-console"
-    implementation "org.springframework.boot:spring-boot-starter-logging"
-    implementation "org.springframework.boot:spring-boot-starter-validation"
     implementation "org.springframework.boot:spring-boot-autoconfigure"
-    implementation "org.graceframework:grace-core"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
+    implementation "org.springframework.boot:spring-boot-starter-logging"
     implementation "org.springframework.boot:spring-boot-starter-tomcat"
+    implementation "org.springframework.boot:spring-boot-starter-validation"
     implementation "org.graceframework:grace-boot"
+    implementation "org.graceframework:grace-core"
     implementation "org.graceframework:grace-logging"
-    implementation "org.graceframework:grace-plugin-controllers"
     implementation "org.graceframework:grace-plugin-codecs"
+    implementation "org.graceframework:grace-plugin-controllers"
     implementation "org.graceframework:grace-plugin-databinding"
     implementation "org.graceframework:grace-plugin-datasource"
     implementation "org.graceframework:grace-plugin-domain-class"
+    implementation "org.graceframework:grace-plugin-gsp"
     implementation "org.graceframework:grace-plugin-i18n"
     implementation "org.graceframework:grace-plugin-interceptors"
     implementation "org.graceframework:grace-plugin-management"
     implementation "org.graceframework:grace-plugin-rest"
     implementation "org.graceframework:grace-plugin-services"
     implementation "org.graceframework:grace-plugin-url-mappings"
-    implementation "org.graceframework.plugins:cache"
     implementation "org.graceframework.plugins:async"
-    implementation "org.graceframework.plugins:scaffolding"
-    implementation "org.graceframework.plugins:fields"
+    implementation "org.graceframework.plugins:cache"
     implementation "org.graceframework.plugins:events"
+    implementation "org.graceframework.plugins:fields"
     implementation "org.graceframework.plugins:hibernate5"
-    implementation "org.hibernate:hibernate-core:5.6.15.Final"
-    implementation "org.graceframework:grace-plugin-gsp"
+    implementation "org.graceframework.plugins:scaffolding"
     profile "org.graceframework.profiles:web"
     runtimeOnly "com.h2database:h2"
     runtimeOnly "org.apache.tomcat:tomcat-jdbc"
@@ -134,6 +133,7 @@ assets {
         targetLanguage: 'ES6', //Can go from ES6 to ES5 for those bleeding edgers
         optimizationLevel: 'SIMPLE' //Or ADVANCED or WHITESPACE_ONLY
     ]
+    skipNonDigests = true
 }
 
 nexusPublishing {

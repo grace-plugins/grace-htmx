@@ -34,9 +34,9 @@
                     <f:table collection="${contactList}" />
 
                     <g:if test="${contactCount > params.int('max')}">
-                    <nav aria-label="Page navigation">
-                        <bs:paginate total="${contactCount ?: 0}" useIcons="true" align="center" />
-                    </nav>
+                    <div class="pagination justify-content-center">
+                        <g:paginate total="${contactCount ?: 0}" />
+                    </div>
                     </g:if>
                 </div>
             </section>

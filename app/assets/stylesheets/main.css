@@ -55,7 +55,8 @@ img {
     padding-bottom: 5px;
     text-align: center;
     color: #222;
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: 300;
 }
 
 .centered {
@@ -81,6 +82,8 @@ img {
 #controllers ul {
     padding-left: 20px;
     margin: 10px 0;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .footer img {
@@ -435,6 +438,45 @@ a.skip {
 img.grace-logo {
     height:320px;
     margin-top:4px;
+}
+
+/* PAGINATION */
+.pagination a,
+.pagination .currentStep {
+    position: relative;
+    display: block;
+    padding: 0.375rem 0.875rem;
+    color: #0d6efd;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-right: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.pagination a:focus,
+.pagination .currentStep {
+    z-index: 3;
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.pagination a:hover {
+    z-index: 2;
+    color: #0a58ca;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.pagination .prevLink {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+.pagination .nextLink {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-right: 1px solid #dee2e6;
 }
 
 /* Bootstrap Icons */

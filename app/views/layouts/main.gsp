@@ -54,7 +54,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Installed Plugins</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plugins</a>
                     <ul class="dropdown-menu">
                         <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
                             <li><a class="dropdown-item" href="#">${plugin.name} - ${plugin.version}</a></li>
