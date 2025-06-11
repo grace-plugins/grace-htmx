@@ -77,7 +77,7 @@ task publishGuide(type: grails.doc.gradle.PublishGuide) {
             'api': '../api',
             'sourceDir': rootProject.projectDir.absolutePath,
             'sourcedir': rootProject.projectDir.absolutePath,
-            'groovyapi': 'http://docs.groovy-lang.org/latest/html/gapi/'
+            'groovyapi': "http://docs.groovy-lang.org/${groovyVersion}/html/gapi/"
     ]
 }
 
