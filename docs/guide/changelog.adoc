@@ -1,0 +1,120 @@
+== What's New
+
+=== 0.9.0
+
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.9.0[v0.9.0]
+
+* Upgrade to Gradle 7.6.6
+* Upgrade to Gradle Nexus Publish Plugin 2.0.0
+* Upgrade to Groovy 3.0.23
+* Upgrade to Grace 2022.2.9
+* Migrate to Central Portal OSSRH Staging API
+* Update README - Add document links
+  - Add badge
+  - Add versions support
+* Correct the groovy api url
+* Upgrade to Gradle 7.6.5
+* Fixed FOLDER: build/docs
+* Update github workflows - Generate and deploy the release version of docs
+* Update github workflows - Upgrade to setup-gradle@v4
+* Remove htmx/index.gsp
+* Update app to Grace 2022.2.8
+* Update doc templates
+* Add docs folder and Gradle tasks
+* Setup Grace docs workflow
+* Upgrade to Grace 2022.2.8 and Groovy 3.0.22
+* Grace Asset Pipeline Plugin 5.2.7
+* Bump version to 0.9.0-SNAPSHOT
+
+=== 0.8.0
+
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.8.0[v0.8.0]
+
+* Don't use gradle parallel build
+* Update asset config
+* Don't include `hyperscript.js` and `hyperscript.min.js` in plugin
+* Fixes link error
+* Set `archiveBaseName` with Jar task
+* Import `htmx.js` `hyperscript.js` directly in `layout.gsp`
+* Gradle: Don't use deprecated `SourceDirectorySet.outputDir` property
+
+=== 0.7.0
+
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.7.0[v0.7.0]
+
+* Update README.md Add tip for compiling assets
+* Exclude test tasks
+* Add CURD for Contact
+* Exclude htmx.js and hyperscript.js to minify assets
+* Update assets minifyJs options
+* Set `archiveBaseName` to htmx
+* Upgrade to Gradle Wrapper 7.6.4
+* Add artifact `grails-plugin.xml`
+* Set `archiveClassifier` with 'plugin'
+* Upgrade to Grace Asset Pipeline Plugin 5.2.6
+* Upgrade to Groovy 3.0.21
+* Upgrade to Grace 2022.2.6
+* Update plugin POM info
+* Update github workflows Upgrade Gradle Actions
+
+=== 0.6.0
+
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.6.0[v0.6.0]
+
+* Disable minify js
+* Update README
+* Add Apache License v2
+* Set assets packagePlugin true Fixes assets resource not found error
+* Rename _hyperscript.js to hyperscript.js Asset pipeline plugin may ignore _*.js
+
+=== 0.5.0
+
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.5.0[v0.5.0]
+
+* Update README
+* Add _hyperscript.js 0.9.12
+* Add missing `app/assets` Fixes ci fail
+* Update README
+* Add htmx.js 1.9.12
+* Update github workflows
+* Update app sources
+* refator: move htmx sources to `plugin` sub directory
+
+=== 0.4.0
+
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.4.0[v0.4.0]
+
+* Update README
+* Update plugin version
+* Provide custom mime type for Htmx
+* Refine HtmxRequestFilter Always set htmx format for htmx request
+* Update HtmxMimeType
+
+=== 0.3.0
+
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.3.0[v0.3.0]
+
+* Set plugin version
+* Cleanup build scripts
+* Change groovy source directories
+* Change groovy source directories
+
+=== 0.2.0
+
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.2.0[v0.2.0]
+
+* Set plugin version
+* Update build scripts Build with JDK 8, Downgrade to Spring Boot 2.6.6
+* Downgrade to Grace 2020.0.0 Support Grails 4 with JDK 8
+* Update github workflows
+
+=== 0.1.0
+
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.1.0[v0.1.0]
+
+* Update README Add Badges
+* Update README Add supports for Grails
+* Update scm url
+* Support old Grails versions #2
+* Support and Compatible with Grails #1
+* Add version property to Plugin
