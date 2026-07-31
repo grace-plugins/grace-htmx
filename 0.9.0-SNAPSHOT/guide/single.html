@@ -40,7 +40,9 @@ function addJsClass(el) {
                                 
                                 <div class="toc-item" style="margin-left:0"><a href="#introduction"><strong>1</strong><span>Introduction</span></a></div>
                                 
-                                <div class="toc-item" style="margin-left:0"><a href="#usage"><strong>2</strong><span>Usage</span></a></div>
+                                <div class="toc-item" style="margin-left:0"><a href="#changelog"><strong>2</strong><span>Changelog</span></a></div>
+                                
+                                <div class="toc-item" style="margin-left:0"><a href="#usage"><strong>3</strong><span>Usage</span></a></div>
                                 
                             </div>
                         </div>
@@ -76,7 +78,9 @@ function addJsClass(el) {
                             
                             <div class="toc-item" style="margin-left:0px"><a href="#introduction"><strong>1</strong><span>Introduction</span></a></div>
                             
-                            <div class="toc-item" style="margin-left:0px"><a href="#usage"><strong>2</strong><span>Usage</span></a></div>
+                            <div class="toc-item" style="margin-left:0px"><a href="#changelog"><strong>2</strong><span>Changelog</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="#usage"><strong>3</strong><span>Usage</span></a></div>
                             
                             <div style="clear:both" ></div>
                         </div>
@@ -97,7 +101,339 @@ function addJsClass(el) {
 </div>
 
 
-<h1 id="usage"><a class="anchor" href="#usage"></a>2 Usage</h1>
+<h1 id="changelog"><a class="anchor" href="#changelog"></a>2 Changelog</h1>
+
+<div class='contribute-btn'>
+    <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grace-plugins/grace-htmx/edit/main/docs/guide/changelog.adoc"'>
+        <i class='fa fa-pencil-square-o'></i> Improve this doc
+    </button>
+</div>
+
+
+<div class="sect1">
+<h2 id="_whats_new">What&#8217;s New</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_0_9_0">0.9.0</h3>
+<div class="paragraph">
+<p>View on GitHub: <a href="https://github.com/grace-plugins/grace-htmx/releases/tag/v0.9.0">v0.9.0</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrade to Gradle 7.6.6</p>
+</li>
+<li>
+<p>Upgrade to Gradle Nexus Publish Plugin 2.0.0</p>
+</li>
+<li>
+<p>Upgrade to Groovy 3.0.23</p>
+</li>
+<li>
+<p>Upgrade to Grace 2022.2.9</p>
+</li>
+<li>
+<p>Migrate to Central Portal OSSRH Staging API</p>
+</li>
+<li>
+<p>Update README - Add document links</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Add badge</p>
+</li>
+<li>
+<p>Add versions support</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Correct the groovy api url</p>
+</li>
+<li>
+<p>Upgrade to Gradle 7.6.5</p>
+</li>
+<li>
+<p>Fixed FOLDER: build/docs</p>
+</li>
+<li>
+<p>Update github workflows - Generate and deploy the release version of docs</p>
+</li>
+<li>
+<p>Update github workflows - Upgrade to setup-gradle@v4</p>
+</li>
+<li>
+<p>Remove htmx/index.gsp</p>
+</li>
+<li>
+<p>Update app to Grace 2022.2.8</p>
+</li>
+<li>
+<p>Update doc templates</p>
+</li>
+<li>
+<p>Add docs folder and Gradle tasks</p>
+</li>
+<li>
+<p>Setup Grace docs workflow</p>
+</li>
+<li>
+<p>Upgrade to Grace 2022.2.8 and Groovy 3.0.22</p>
+</li>
+<li>
+<p>Grace Asset Pipeline Plugin 5.2.7</p>
+</li>
+<li>
+<p>Bump version to 0.9.0-SNAPSHOT</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_8_0">0.8.0</h3>
+<div class="paragraph">
+<p>View on GitHub: <a href="https://github.com/grace-plugins/grace-htmx/releases/tag/v0.8.0">v0.8.0</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Don&#8217;t use gradle parallel build</p>
+</li>
+<li>
+<p>Update asset config</p>
+</li>
+<li>
+<p>Don&#8217;t include <code>hyperscript.js</code> and <code>hyperscript.min.js</code> in plugin</p>
+</li>
+<li>
+<p>Fixes link error</p>
+</li>
+<li>
+<p>Set <code>archiveBaseName</code> with Jar task</p>
+</li>
+<li>
+<p>Import <code>htmx.js</code> <code>hyperscript.js</code> directly in <code>layout.gsp</code></p>
+</li>
+<li>
+<p>Gradle: Don&#8217;t use deprecated <code>SourceDirectorySet.outputDir</code> property</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_7_0">0.7.0</h3>
+<div class="paragraph">
+<p>View on GitHub: <a href="https://github.com/grace-plugins/grace-htmx/releases/tag/v0.7.0">v0.7.0</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README.md Add tip for compiling assets</p>
+</li>
+<li>
+<p>Exclude test tasks</p>
+</li>
+<li>
+<p>Add CURD for Contact</p>
+</li>
+<li>
+<p>Exclude htmx.js and hyperscript.js to minify assets</p>
+</li>
+<li>
+<p>Update assets minifyJs options</p>
+</li>
+<li>
+<p>Set <code>archiveBaseName</code> to htmx</p>
+</li>
+<li>
+<p>Upgrade to Gradle Wrapper 7.6.4</p>
+</li>
+<li>
+<p>Add artifact <code>grails-plugin.xml</code></p>
+</li>
+<li>
+<p>Set <code>archiveClassifier</code> with 'plugin'</p>
+</li>
+<li>
+<p>Upgrade to Grace Asset Pipeline Plugin 5.2.6</p>
+</li>
+<li>
+<p>Upgrade to Groovy 3.0.21</p>
+</li>
+<li>
+<p>Upgrade to Grace 2022.2.6</p>
+</li>
+<li>
+<p>Update plugin POM info</p>
+</li>
+<li>
+<p>Update github workflows Upgrade Gradle Actions</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_6_0">0.6.0</h3>
+<div class="paragraph">
+<p>View on GitHub: <a href="https://github.com/grace-plugins/grace-htmx/releases/tag/v0.6.0">v0.6.0</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Disable minify js</p>
+</li>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Add Apache License v2</p>
+</li>
+<li>
+<p>Set assets packagePlugin true Fixes assets resource not found error</p>
+</li>
+<li>
+<p>Rename _hyperscript.js to hyperscript.js Asset pipeline plugin may ignore _*.js</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_5_0">0.5.0</h3>
+<div class="paragraph">
+<p>View on GitHub: <a href="https://github.com/grace-plugins/grace-htmx/releases/tag/v0.5.0">v0.5.0</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Add _hyperscript.js 0.9.12</p>
+</li>
+<li>
+<p>Add missing <code>app/assets</code> Fixes ci fail</p>
+</li>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Add htmx.js 1.9.12</p>
+</li>
+<li>
+<p>Update github workflows</p>
+</li>
+<li>
+<p>Update app sources</p>
+</li>
+<li>
+<p>refator: move htmx sources to <code>plugin</code> sub directory</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_4_0">0.4.0</h3>
+<div class="paragraph">
+<p>View on GitHub: <a href="https://github.com/grace-plugins/grace-htmx/releases/tag/v0.4.0">v0.4.0</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README</p>
+</li>
+<li>
+<p>Update plugin version</p>
+</li>
+<li>
+<p>Provide custom mime type for Htmx</p>
+</li>
+<li>
+<p>Refine HtmxRequestFilter Always set htmx format for htmx request</p>
+</li>
+<li>
+<p>Update HtmxMimeType</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_3_0">0.3.0</h3>
+<div class="paragraph">
+<p>View on GitHub: <a href="https://github.com/grace-plugins/grace-htmx/releases/tag/v0.3.0">v0.3.0</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set plugin version</p>
+</li>
+<li>
+<p>Cleanup build scripts</p>
+</li>
+<li>
+<p>Change groovy source directories</p>
+</li>
+<li>
+<p>Change groovy source directories</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_2_0">0.2.0</h3>
+<div class="paragraph">
+<p>View on GitHub: <a href="https://github.com/grace-plugins/grace-htmx/releases/tag/v0.2.0">v0.2.0</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set plugin version</p>
+</li>
+<li>
+<p>Update build scripts Build with JDK 8, Downgrade to Spring Boot 2.6.6</p>
+</li>
+<li>
+<p>Downgrade to Grace 2020.0.0 Support Grails 4 with JDK 8</p>
+</li>
+<li>
+<p>Update github workflows</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_1_0">0.1.0</h3>
+<div class="paragraph">
+<p>View on GitHub: <a href="https://github.com/grace-plugins/grace-htmx/releases/tag/v0.1.0">v0.1.0</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update README Add Badges</p>
+</li>
+<li>
+<p>Update README Add supports for Grails</p>
+</li>
+<li>
+<p>Update scm url</p>
+</li>
+<li>
+<p>Support old Grails versions #2</p>
+</li>
+<li>
+<p>Support and Compatible with Grails #1</p>
+</li>
+<li>
+<p>Add version property to Plugin</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<h1 id="usage"><a class="anchor" href="#usage"></a>3 Usage</h1>
 
 <div class='contribute-btn'>
     <button type='button' class='btn btn-default' onclick='window.location.href="https://github.com/grace-plugins/grace-htmx/edit/main/docs/guide/usage.adoc"'>
@@ -243,7 +579,7 @@ so you can add <code>htmx.js</code> to the <code>app/assets/application.js</code
         </table>
 
         <div id="footer">
-            Copyright &copy; 2023-2025 Michael Yan. The content is licensed under a Creative Commons Attribution 4.0 International (CC BY SA 4.0) license.
+            Copyright &copy; 2023-2026 Michael Yan. The content is licensed under a Creative Commons Attribution 4.0 International (CC BY SA 4.0) license.
             
         </div>
 
