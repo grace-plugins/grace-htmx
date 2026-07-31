@@ -14,14 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: ['11']
+        java: ['17']
     env:
       WORKSPACE: ${{ github.workspace }}
     steps:
       - name: Checkout repository
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup JDK
@@ -45,7 +45,7 @@ jobs:
       - name: Checkout repository
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup JDK
