@@ -10,7 +10,7 @@ ext."signing.secretKeyRingFile" = project.hasProperty("signing.secretKeyRingFile
 ext.isReleaseVersion = !projectVersion.endsWith("SNAPSHOT")
 
 ext {
-    springBootVersion = '2.6.6'
+    springBootVersion = '2.7.18'
     servletVersion = '4.0.1'
 }
 
@@ -55,8 +55,8 @@ tasks.withType(Jar) {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
     withJavadocJar()
     withSourcesJar()
 }
