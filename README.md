@@ -13,7 +13,7 @@ Grace Plugin for using Grace/Grails app with htmx.
 
 ## Ducumentation
 
-* [0.9.x](https://plugins.graceframework.org/grace-htmx/0.9.x/)
+* [0.10.x](https://plugins.graceframework.org/grace-htmx/0.10.x/)
 
 ## Usage
 
@@ -168,7 +168,7 @@ To make it easier for users to use and upgrade, Plugin adopts a version policy c
 | Plugin Version | Grace Version |
 |----------------|---------------|
 | 1.0.x          | 2023.0+       |
-| 0.9.x          | 2022.0+       |
+| 0.10.x          | 2022.0+       |
 
 
 ## License
