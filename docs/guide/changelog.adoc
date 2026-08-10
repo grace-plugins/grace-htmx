@@ -1,5 +1,24 @@
 == What's New
 
+=== 0.10.0
+
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.9.0[v0.9.0]
+
+* Add release notes for 0.10
+* Build Contact CRUD with HTMX link:{github}/issues/8[#8]
+* Using datafaker to initialize sample data 
+* HtmxAutoConfiguration should be ordered before MimeTypesConfiguration link:{github}/issues/7[#7]
+* Set attribute `RESPONSE_MIME_TYPES` for HTMX request link:{github}/issues/6[#6]
+* Don't need to apply `asset-pipeline` plugin link:{github}/issues/5[#5]
+* Remove htmx.js and htmx.min.js provided by htmx plugin link:{github}/issues/4[#4]
+* Build target to JDK 11 
+* Upgrade to Spring Boot 2.7.18 
+* Upgrade to Groovy 3.0.23 
+* Upgrade to Grace 2022.2.9 
+* Update GitHub workflows - Create '0.10.x' branch
+* Update README 
+* Bump version to 0.10.0-SNAPSHOT 
+
 === 0.9.0
 
 View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.9.0[v0.9.0]
