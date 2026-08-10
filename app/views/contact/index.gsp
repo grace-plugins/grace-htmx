@@ -31,16 +31,66 @@
                     <g:if test="${flash.message}">
                         <div class="alert alert-success" role="status"><i class="bi bi-info-circle"></i>${flash.message}</div>
                     </g:if>
-                    <f:table collection="${contactList}" />
-
-                    <g:if test="${contactCount > params.int('max')}">
-                    <div class="pagination justify-content-center">
-                        <g:paginate total="${contactCount ?: 0}" />
-                    </div>
-                    </g:if>
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <g:each in="${['id', 'firstName', 'lastName']}" var="p" status="i">
+                                    <g:sortableColumn property="${p}" titleKey="contact.${p}.label" />
+                                </g:each>
+                                <th width="15%" class="text-center">Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <g:each in="${contactList}" var="bean" status="i">
+                                <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+                                    <td>
+                                        <a href="/contact/show/${bean.id}" 
+                                            hx-get="/contact/show/${bean.id}" 
+                                            hx-target="#modals-contact"
+                                            hx-trigger="click"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#modals-contact">
+                                            <f:display bean="${bean}" property="id" />
+                                        </a>
+                                    </td>
+                                    <td><f:display bean="${bean}" property="firstName" /></td>
+                                    <td><f:display bean="${bean}" property="lastName" /></td>
+                                    <td class="text-center">
+                                        <g:link class="btn btn-link" method="GET" controller="contact" action="show" id="${bean.id}">Show</g:link>
+                                            | 
+                                        <a class="btn btn-link"
+                                            hx-target="closest tr" hx-swap="outerHTML swap:1s"
+                                            hx-confirm="${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}"
+                                            hx-delete="/contact/delete/${bean.id}">
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            </g:each>
+                            <tr id="replaceMe" class="text-center">
+                                <td colspan="4">
+                                    <button class='btn btn-primary'
+                                            hx-get="/contact/list?page=${nextPage}"
+                                            hx-target="#replaceMe"
+                                            hx-swap="outerHTML">
+                                            Load More Contacts...
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </div>
     </div>
+<div id="modals-contact"
+    class="modal modal-blur fade"
+    style="display: none"
+    aria-hidden="false"
+    tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content"></div>
+    </div>
+</div>
     </body>
 </html>

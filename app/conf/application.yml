@@ -64,6 +64,8 @@ grails:
             html:
               - text/html
               - application/xhtml+xml
+            htmx:
+              - text/html
             js: text/javascript
             json:
               - application/json

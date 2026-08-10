@@ -8,10 +8,21 @@ class ContactController {
     ContactService contactService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    // Using the responseFormats property for show action
+    // static responseFormats = [show: ['html', 'htmx']]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond contactService.list(params), model:[contactCount: contactService.count()]
+        respond contactService.list(params), model:[contactCount: contactService.count(), nextPage: 2]
+    }
+
+    def list(Integer page) {
+        params.max = 10
+        params.offset = (page - 1) * 10
+        def contactCount = contactService.count()
+        def nextPage = page + 1
+        def hasNext = (contactCount / 10) >= page
+        respond contactService.list(params), model:[nextPage: nextPage, hasNext: hasNext]
     }
 
     def show(Long id) {
@@ -82,6 +93,9 @@ class ContactController {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'contact.label', default: 'Contact'), id])
                 redirect action:"index", method:"GET"
+            }
+            htmx {
+                render status: OK
             }
             '*'{ render status: NO_CONTENT }
         }
