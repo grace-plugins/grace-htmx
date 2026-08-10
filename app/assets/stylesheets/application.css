@@ -12,3 +12,7 @@
 *= require main
 *= require_self
 */
+tr.htmx-swapping td {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
