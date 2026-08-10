@@ -68,6 +68,7 @@ dependencies {
     implementation "org.graceframework.plugins:fields"
     implementation "org.graceframework.plugins:hibernate5"
     implementation "org.graceframework.plugins:scaffolding"
+    implementation "net.datafaker:datafaker:1.9.0"
     profile "org.graceframework.profiles:web"
     runtimeOnly "com.h2database:h2"
     runtimeOnly "org.apache.tomcat:tomcat-jdbc"
