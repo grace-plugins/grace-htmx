@@ -20,7 +20,6 @@ group "org.graceframework.plugins"
 apply plugin: "eclipse"
 apply plugin: "idea"
 apply plugin: "groovy"
-apply plugin: "org.graceframework.asset-pipeline"
 apply plugin: "org.graceframework.grace-plugin"
 apply plugin: "maven-publish"
 apply plugin: "signing"
@@ -31,8 +30,10 @@ repositories {
 
 dependencies {
     compileOnly "org.springframework.boot:spring-boot-autoconfigure:$springBootVersion"
+    annotationProcessor "org.springframework.boot:spring-boot-autoconfigure-processor:$springBootVersion"
     compileOnly "javax.servlet:javax.servlet-api:$servletVersion"
     compileOnly "org.graceframework:grace-core:$graceVersion"
+    compileOnly "org.graceframework:grace-plugin-mimetypes:$graceVersion"
     compileOnly "org.graceframework:grace-web-common:$graceVersion"
 }
 
@@ -71,18 +72,6 @@ jar {
         "Implementation-Vendor": 'Grace Plugins')
     archiveClassifier.set('plugin')
     includeEmptyDirs = false
-}
-
-assets {
-    assetsPath = 'app/assets'
-    minifyJs = true
-    minifyCss = true
-    minifyOptions = [
-        languageMode: 'ES6',
-        targetLanguage: 'ES6',
-        optimizationLevel: 'SIMPLE'
-    ]
-    packagePlugin = true
 }
 
 bootJar.enabled = false

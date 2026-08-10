@@ -1,5 +1,5 @@
 /*
- * Copyright 2022-2024 the original author or authors.
+ * Copyright 2022-2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,15 +17,16 @@ package org.graceframework.plugins.htmx;
 
 import javax.servlet.DispatcherType;
 
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.autoconfigure.web.servlet.ConditionalOnMissingFilterBean;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.filter.OrderedFilter;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import grails.web.mime.MimeTypeProvider;
+import org.grails.plugins.web.mime.MimeTypesConfiguration;
 
 /**
  * {@link EnableAutoConfiguration Auto-configuration} for Htmx Plugin.
@@ -34,7 +35,7 @@ import grails.web.mime.MimeTypeProvider;
  * @since 0.0.1
  */
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
-@Configuration(proxyBeanMethods = false)
+@AutoConfiguration(before = { MimeTypesConfiguration.class })
 public class HtmxAutoConfiguration {
 
     @Bean
