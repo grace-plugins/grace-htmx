@@ -1,29 +1,16 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven { url "https://repo.gradle.org/gradle/libs-releases" }
-        maven { url "https://plugins.gradle.org/m2/" }
-    }
-    dependencies {
-        classpath "io.github.gradle-nexus:publish-plugin:2.0.0"
-        classpath "org.graceframework:grace-gradle-plugin:$graceVersion"
-        classpath "com.github.erdi:webdriver-binaries-gradle-plugin:3.2"
-        classpath "org.graceframework.plugins:asset-pipeline-gradle:5.2.7"
-    }
+plugins {
+    id "eclipse"
+    id "idea"
+    id "war"
+    id "io.github.gradle-nexus.publish-plugin"
+    id "org.graceframework.grace-web"
+    id "org.graceframework.asset-pipeline"
+    id "com.github.erdi.webdriver-binaries"
+    id "org.graceframework.grace-gsp"
 }
 
 group "grace.demos"
 version projectVersion
-
-apply plugin: "eclipse"
-apply plugin: "idea"
-apply plugin: "war"
-apply plugin: "io.github.gradle-nexus.publish-plugin"
-apply plugin: "org.graceframework.grace-web"
-apply plugin: "com.github.erdi.webdriver-binaries"
-apply plugin: "org.graceframework.asset-pipeline"
-apply plugin: "org.graceframework.grace-gsp"
-apply from: 'gradle/docs.gradle'
 
 repositories {
     mavenCentral()
@@ -40,9 +27,8 @@ grails {
 }
 
 dependencies {
-    developmentOnly('org.springframework.boot:spring-boot-devtools')
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
     console "org.graceframework:grace-console"
-    implementation "org.springframework.boot:spring-boot-autoconfigure"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.boot:spring-boot-starter-logging"
     implementation "org.springframework.boot:spring-boot-starter-tomcat"
@@ -66,13 +52,12 @@ dependencies {
     implementation "org.graceframework.plugins:cache"
     implementation "org.graceframework.plugins:events"
     implementation "org.graceframework.plugins:fields"
-    implementation "org.graceframework.plugins:hibernate5"
+    implementation "org.graceframework.plugins:hibernate"
     implementation "org.graceframework.plugins:scaffolding"
     implementation "net.datafaker:datafaker:1.9.0"
     profile "org.graceframework.profiles:web"
     runtimeOnly "com.h2database:h2"
-    runtimeOnly "org.apache.tomcat:tomcat-jdbc"
-    runtimeOnly "org.graceframework.plugins:asset-pipeline-plugin:5.2.7"
+    runtimeOnly "org.graceframework.plugins:asset-pipeline-plugin:6.0.1"
     testImplementation "org.graceframework:grace-test-support"
     testImplementation "org.mockito:mockito-core"
     testImplementation "org.graceframework.plugins:geb"
@@ -84,20 +69,15 @@ dependencies {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
 
-bootRun {
-    ignoreExitValue true
-    jvmArgs(
-        '-Dspring.output.ansi.enabled=always', 
-        '-noverify', 
-        '-XX:TieredStopAtLevel=1',
-        '-Xmx1024m')
-    sourceResources sourceSets.main
-    String springProfilesActive = 'spring.profiles.active'
-    systemProperty springProfilesActive, System.getProperty(springProfilesActive)
+tasks.withType(Jar) {
+    configure {
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    }
 }
 
 tasks.withType(GroovyCompile) {
