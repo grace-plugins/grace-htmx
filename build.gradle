@@ -9,6 +9,8 @@ plugins {
     id "org.graceframework.grace-gsp"
 }
 
+apply from: 'gradle/docs.gradle'
+
 group "grace.demos"
 version projectVersion
 

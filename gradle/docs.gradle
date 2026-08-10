@@ -24,9 +24,9 @@ dependencies {
     documentation 'org.fusesource.jansi:jansi:1.18'
     documentation 'jline:jline:2.14.6'
     documentation 'com.github.javaparser:javaparser-core:3.15.14'
-    documentation "org.codehaus.groovy:groovy:$groovyVersion"
-    documentation "org.codehaus.groovy:groovy-ant:$groovyVersion"
-    documentation "org.codehaus.groovy:groovy-cli-picocli:$groovyVersion"
+    documentation "org.apache.groovy:groovy:$groovyVersion"
+    documentation "org.apache.groovy:groovy-ant:$groovyVersion"
+    documentation "org.apache.groovy:groovy-cli-picocli:$groovyVersion"
 }
 
 def cleanTask = project.tasks.findByName('clean')
@@ -43,7 +43,7 @@ else {
 
 tasks.withType(Groovydoc) {
     group = DOCUMENTATION_GROUP
-    docTitle = "Grace HTMX Plugin - ${project.version}"
+    docTitle = "Grace HTMX Plugin - ${projectVersion}"
     destinationDir = project.file('build/docs/api')
     def files = []
     project.rootProject.subprojects
@@ -73,7 +73,7 @@ task publishGuide(type: grails.doc.gradle.PublishGuide) {
     asciidoc = true
     properties = [
             'safe': 'UNSAFE',
-            'version': project.version,
+            'version': projectVersion,
             'api': '../api',
             'sourceDir': rootProject.projectDir.absolutePath,
             'sourcedir': rootProject.projectDir.absolutePath,
@@ -88,7 +88,7 @@ task docs(dependsOn:[groovydoc, publishGuide]) {
 def assembleTask = project.tasks.findByName('assemble')
 if (assembleTask == null) {
     task assemble(dependsOn: docs, type:Zip) {
-        baseName = "${project.name}-${project.version}"
+        baseName = "${project.name}-${projectVersion}"
         destinationDir = new File(project.buildDir, 'distributions')
         from project.files("${buildDir}/docs")
     }
