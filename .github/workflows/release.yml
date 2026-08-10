@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: ['11']
+        java: ['17']
     env:
       GIT_USER_NAME: rainboyan
       GIT_USER_EMAIL: rain@rainboyan.com
@@ -40,7 +40,7 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v5
         with:
-          distribution: 'adopt'
+          distribution: 'zulu'
           java-version: ${{ matrix.java }}
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v5

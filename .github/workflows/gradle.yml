@@ -2,10 +2,10 @@ name: Grace CI
 on:
   push:
     branches:
-      - 0.10.x
+      - main
   pull_request:
     branches:
-      - 0.10.x
+      - main
   workflow_dispatch:
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v5
         with:
-          distribution: 'adopt'
+          distribution: 'zulu'
           java-version: ${{ matrix.java }}
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v5
@@ -51,8 +51,8 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v5
         with:
-          distribution: 'adopt'
-          java-version: 11
+          distribution: 'zulu'
+          java-version: 17
       - name: Generate secring file
         env:
           SECRING_FILE: ${{ secrets.SECRING_FILE }}
