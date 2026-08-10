@@ -1,5 +1,16 @@
 == What's New
 
+=== 1.0.0
+
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v1.0.0[v1.0.0]
+
+* Update README
+* Update usage
+* Update docs task
+* Update GitHub workflows - Switch to 'main' branch
+* Upgrade to Grace 2023.0.3 link:{github}/issues/10[#10]
+* Support Grace 2023.0.x and Migrate to Jakarta link:{github}/issues/9[#9]
+
 === 0.10.0
 
 View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.9.0[v0.9.0]
