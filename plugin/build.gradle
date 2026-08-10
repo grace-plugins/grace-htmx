@@ -30,8 +30,10 @@ repositories {
 
 dependencies {
     compileOnly "org.springframework.boot:spring-boot-autoconfigure:$springBootVersion"
+    annotationProcessor "org.springframework.boot:spring-boot-autoconfigure-processor:$springBootVersion"
     compileOnly "javax.servlet:javax.servlet-api:$servletVersion"
     compileOnly "org.graceframework:grace-core:$graceVersion"
+    compileOnly "org.graceframework:grace-plugin-mimetypes:$graceVersion"
     compileOnly "org.graceframework:grace-web-common:$graceVersion"
 }
 
