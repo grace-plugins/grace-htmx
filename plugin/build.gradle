@@ -10,8 +10,8 @@ ext."signing.secretKeyRingFile" = project.hasProperty("signing.secretKeyRingFile
 ext.isReleaseVersion = !projectVersion.endsWith("SNAPSHOT")
 
 ext {
-    springBootVersion = '2.7.18'
-    servletVersion = '4.0.1'
+    springBootVersion = '3.0.13'
+    servletVersion = '6.0.0'
 }
 
 version projectVersion
@@ -31,7 +31,7 @@ repositories {
 dependencies {
     compileOnly "org.springframework.boot:spring-boot-autoconfigure:$springBootVersion"
     annotationProcessor "org.springframework.boot:spring-boot-autoconfigure-processor:$springBootVersion"
-    compileOnly "javax.servlet:javax.servlet-api:$servletVersion"
+    compileOnly "jakarta.servlet:jakarta.servlet-api:$servletVersion"
     compileOnly "org.graceframework:grace-core:$graceVersion"
     compileOnly "org.graceframework:grace-plugin-mimetypes:$graceVersion"
     compileOnly "org.graceframework:grace-web-common:$graceVersion"
@@ -56,8 +56,8 @@ tasks.withType(Jar) {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
     withJavadocJar()
     withSourcesJar()
 }
