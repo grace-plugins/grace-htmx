@@ -13,22 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.graceframework.plugins.htmx;
+package org.graceframework.plugins.htmx
 
-import grails.web.mime.MimeType;
+import grails.artefact.Controller
+
+import org.grails.web.servlet.mvc.GrailsWebRequest
 
 /**
- * {@link MimeType} for htmx
+ * Add helper methods to {@link Controller}.
  *
  * @author Michael Yan
- * @since 0.0.1
+ * @since 0.11.0
  */
-public class HtmxMimeType {
+class HtmxPluginSupport {
 
-    public static final String HTMX_FORMAT = "htmx";
-
-    public static final MimeType HTMX = new MimeType("text/html", "htmx");
-
-    public static final MimeType[] HTMX_MIME_TYPES = new MimeType[] { HtmxMimeType.HTMX };
+    static void doWithDynamicMethods() {
+        Controller.metaClass.isHtmx = {
+            GrailsWebRequest webRequest = GrailsWebRequest.lookup()
+            return HttpServletRequestExtension.isHtmx(webRequest.currentRequest)
+        }
+    }
 
 }

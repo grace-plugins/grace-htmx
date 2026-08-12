@@ -15,6 +15,8 @@
  */
 package org.graceframework.plugins.htmx
 
+import groovy.transform.CompileStatic
+
 import grails.plugins.Plugin
 import grails.util.GrailsUtil
 
@@ -24,6 +26,7 @@ import grails.util.GrailsUtil
  * @author Michael Yan
  * @since 0.0.1
  */
+@CompileStatic
 class HtmxGrailsPlugin extends Plugin {
 
     def version = '1.1.0-SNAPSHOT'
@@ -55,5 +58,10 @@ Grace Plugin for using Grace app with htmx.
 
     // Online location of the plugin's browseable source code.
     def scm = [ url: "https://github.com/grace-plugins/grace-htmx" ]
+
+    @Override
+    void doWithDynamicMethods() {
+        HtmxPluginSupport.doWithDynamicMethods()
+    }
 
 }

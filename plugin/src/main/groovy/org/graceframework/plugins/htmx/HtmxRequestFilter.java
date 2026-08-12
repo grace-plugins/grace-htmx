@@ -23,7 +23,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import grails.web.mime.MimeType;
 import org.grails.web.util.GrailsApplicationAttributes;
 
 /**
@@ -40,9 +39,11 @@ public class HtmxRequestFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
 
         request.setAttribute(GrailsApplicationAttributes.CONTENT_FORMAT, HtmxMimeType.HTMX_FORMAT);
+        request.setAttribute(GrailsApplicationAttributes.REQUEST_FORMATS, HtmxMimeType.HTMX_MIME_TYPES);
         request.setAttribute(GrailsApplicationAttributes.RESPONSE_FORMAT, HtmxMimeType.HTMX_FORMAT);
+        request.setAttribute(GrailsApplicationAttributes.RESPONSE_FORMATS, HtmxMimeType.HTMX_MIME_TYPES);
         request.setAttribute(GrailsApplicationAttributes.RESPONSE_MIME_TYPE, HtmxMimeType.HTMX);
-        request.setAttribute(GrailsApplicationAttributes.RESPONSE_MIME_TYPES, new MimeType[] { HtmxMimeType.HTMX });
+        request.setAttribute(GrailsApplicationAttributes.RESPONSE_MIME_TYPES, HtmxMimeType.HTMX_MIME_TYPES);
 
         filterChain.doFilter(request, response);
     }
