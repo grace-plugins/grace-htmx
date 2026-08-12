@@ -1,5 +1,5 @@
 /*
- * Copyright 2022-2024 the original author or authors.
+ * Copyright 2022-2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,5 +28,7 @@ public class HtmxMimeType {
     public static final String HTMX_FORMAT = "htmx";
 
     public static final MimeType HTMX = new MimeType("text/html", "htmx");
+
+    public static final MimeType[] HTMX_MIME_TYPES = new MimeType[] { HtmxMimeType.HTMX };
 
 }
