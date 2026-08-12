@@ -1,7 +1,7 @@
 [![Main branch build status](https://github.com/grace-plugins/grace-htmx/workflows/Grace%20CI/badge.svg?style=flat)](https://github.com/grace-plugins/grace-htmx/actions?query=workflow%3A%Grace+CI%22)
 [![Apache 2.0 license](https://img.shields.io/badge/License-APACHE%202.0-green.svg?logo=APACHE&style=flat)](https://opensource.org/licenses/Apache-2.0)
 [![Latest version on Maven Central](https://img.shields.io/maven-central/v/org.graceframework.plugins/htmx.svg?label=Maven%20Central&logo=apache-maven&style=flat)](https://search.maven.org/search?q=g:org.graceframework.plugins)
-[![Grace Document](https://img.shields.io/badge/Grace_Document-0.10.x-blue?style=flat&logo=asciidoctor&logoColor=E40046&labelColor=ffffff&color=f49b06)](https://plugins.graceframework.org/grace-htmx/0.10.x/)
+[![Grace Document](https://img.shields.io/badge/Grace_Document-0.11.x-blue?style=flat&logo=asciidoctor&logoColor=E40046&labelColor=ffffff&color=f49b06)](https://plugins.graceframework.org/grace-htmx/0.11.x/)
 [![Grace on X](https://img.shields.io/twitter/follow/graceframework?style=social)](https://x.com/graceframework)
 
 [![Groovy Version](https://img.shields.io/badge/Groovy-3.0.23-blue?style=flat&color=4298b8)](https://groovy-lang.org/releasenotes/groovy-3.0.html)
@@ -13,7 +13,7 @@ Grace Plugin for using Grace/Grails app with htmx.
 
 ## Ducumentation
 
-* [0.10.x](https://plugins.graceframework.org/grace-htmx/0.10.x/)
+* [0.11.x](https://plugins.graceframework.org/grace-htmx/0.11.x/)
 
 ## Usage
 
@@ -59,7 +59,7 @@ request.htmx.boosted == request.getHeader('HX-Boosted')
 request.htmx.target  == request.getHeader('HX-Target')
 
 // Check htmx request?
-if (request.htmx as boolean) { // or use request.isHtmx()
+if (request.htmx as boolean) { // or use request.isHtmx() // or just use isHtmx()
     template = 'book-detail'
 }
 
