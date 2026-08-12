@@ -59,7 +59,7 @@ request.htmx.boosted == request.getHeader('HX-Boosted')
 request.htmx.target  == request.getHeader('HX-Target')
 
 // Check htmx request?
-if (request.htmx as boolean) { // or use request.isHtmx()
+if (request.htmx as boolean) { // or use request.isHtmx() // or just use isHtmx()
     template = 'book-detail'
 }
 
