@@ -1,8 +1,19 @@
 == What's New
 
+=== 0.11.0
+
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.11.0[v0.11.0]
+
+* Add release notes for 0.11
+* Add i18n labels for Contact link:{github}/issues/13[#13]
+* Configure REQUEST_FORMATS and RESPONSE_FORMATS in the HtmxRequestFilter link:{github}/issues/12[#12]
+* Add isHtmx() helper method to all Controllers link:{github}/issues/11[#11]
+* Update GitHub workflows - Switch to '0.11.x' branch
+* Bump version to 0.11.0-SNAPSHOT
+
 === 0.10.0
 
-View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.9.0[v0.9.0]
+View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v0.10.0[v0.10.0]
 
 * Add release notes for 0.10
 * Build Contact CRUD with HTMX link:{github}/issues/8[#8]
