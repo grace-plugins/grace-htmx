@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <title>3 Usage 0.11.0</title>
+    <title>3 Usage 1.1.0-SNAPSHOT</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
     <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
@@ -79,7 +79,7 @@ function addJsClass() {
                 <div class="project">
                     <h1>3 Usage</h1>
 
-                    <p><strong>Version:</strong> 0.11.0</p>
+                    <p><strong>Version:</strong> 1.1.0-SNAPSHOT</p>
                 </div>
 
                 
@@ -193,23 +193,14 @@ response.htmx.trigger = <span class="string"><span class="delimiter">'</span><sp
 </div>
 </div>
 <div class="paragraph">
-<p>If you use <code>asset-pipeline</code> plugin, this plugin already includes <code>htmx.js</code>, <code>hyperscript.js</code>,
-so you can add <code>htmx.js</code> to the <code>app/assets/application.js</code>,</p>
+<p>Since version 0.10+, this plugin doesn&#8217;t includes <code>htmx.js</code>, <code>hyperscript.js</code>,
+so you should download these libraries into the <code>app/assets/</code>, and then import <code>htmx.js</code> to the <code>app/assets/application.js</code>,</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="javascript"><span class="comment">//= require hyperscript</span>
 <span class="comment">//= require htmx</span>
 <span class="comment">//= require_self</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Also, you can use <code>asset</code> tag in the GSP,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="html"><span class="tag">&lt;asset:javascript</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">hyperscript.js</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;asset:javascript</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">htmx.js</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span></code></pre>
 </div>
 </div>
 </div>
