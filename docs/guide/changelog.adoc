@@ -1,6 +1,23 @@
 == What's New
 
+=== 1.2.0
+
+View on GitHub: link:{github}/releases/tag/v1.2.0[v1.2.0]
+
+* Update README
+* Add release notes for 1.2
+* Upgrade to Datafaker 2.7.0 link:{github}/issues/19[#19]
+* Upgrade to Grace 2023.2.0 link:{github}/issues/18[#18]
+* Migrate HtmxHandler to Jakarta Servlet API
+* Use g:link and g:createLink to replace the link href link:{github}/issues/17[#17]
+* Support using getHtmx() helper method in Controllers link:{github}/issues/16[#16]
+* Use 'html' as the fallback mime type link:{github}/issues/15[#15]
+* Update GitHub workflows - Switch to '0.12.x' branch
+* Bump version to 1.2.0-SNAPSHOT
+
 === 1.1.0
+
+View on GitHub: link:{github}/releases/tag/v1.1.0[v1.1.0]
 
 * Update README
 * Add release notes for 1.1
@@ -12,7 +29,7 @@
 
 === 1.0.0
 
-View on GitHub: https://github.com/grace-plugins/grace-htmx/releases/tag/v1.0.0[v1.0.0]
+View on GitHub: link:{github}/releases/tag/v1.0.0[v1.0.0]
 
 * Update README
 * Add release notes for 1.0
