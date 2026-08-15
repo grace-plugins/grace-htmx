@@ -44,37 +44,40 @@
                             <g:each in="${contactList}" var="bean" status="i">
                                 <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
                                     <td>
-                                        <a href="/contact/show/${bean.id}" 
-                                            hx-get="/contact/show/${bean.id}" 
-                                            hx-target="#modals-contact"
-                                            hx-trigger="click"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#modals-contact">
+                                        <g:link class="btn btn-link" method="GET" controller="contact" action="show" id="${bean.id}">
                                             <f:display bean="${bean}" property="id" />
-                                        </a>
+                                        </g:link>
                                     </td>
                                     <td><f:display bean="${bean}" property="firstName" /></td>
                                     <td><f:display bean="${bean}" property="lastName" /></td>
                                     <td class="text-center">
-                                        <g:link class="btn btn-link" method="GET" controller="contact" action="show" id="${bean.id}">Show</g:link>
-                                            | 
-                                        <a class="btn btn-link"
+                                        <g:link method="GET" controller="contact" action="show" id="${bean.id}"
+                                            hx-get="${createLink(controller: 'contact', action: 'show', id: bean.id)}"
+                                            hx-target="#modals-contact"
+                                            hx-trigger="click"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#modals-contact">
+                                            Show
+                                        </g:link>&nbsp;&nbsp;&nbsp;&nbsp;| 
+                                        <g:link class="btn btn-link"
+                                            method="delete" controller="contact" action="delete" id="${bean.id}"
+                                            hx-delete="${createLink(controller: 'contact', action: 'delete', id: bean.id)}"
                                             hx-target="closest tr" hx-swap="outerHTML swap:1s"
-                                            hx-confirm="${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}"
-                                            hx-delete="/contact/delete/${bean.id}">
+                                            hx-confirm="${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}">
                                             Delete
-                                        </a>
+                                        </g:link>
                                     </td>
                                 </tr>
                             </g:each>
                             <tr id="replaceMe" class="text-center">
                                 <td colspan="4">
-                                    <button class='btn btn-primary'
-                                            hx-get="/contact/list?page=${nextPage}"
+                                    <g:link class="btn btn-primary"
+                                            method="GET" controller="contact" action="list" params="[page: nextPage]"
+                                            hx-get="${createLink(controller: 'contact', action: 'list', params: [page: nextPage])}"
                                             hx-target="#replaceMe"
                                             hx-swap="outerHTML">
                                             Load More Contacts...
-                                    </button>
+                                    </g:link>
                                 </td>
                             </tr>
                         </tbody>
