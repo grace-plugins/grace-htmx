@@ -7,9 +7,8 @@ plugins {
     id "org.graceframework.asset-pipeline"
     id "com.github.erdi.webdriver-binaries"
     id "org.graceframework.grace-gsp"
+    id "org.graceframework.grace-doc"
 }
-
-apply from: 'gradle/docs.gradle'
 
 group "grace.demos"
 version projectVersion

@@ -10,7 +10,7 @@ ext."signing.secretKeyRingFile" = project.hasProperty("signing.secretKeyRingFile
 ext.isReleaseVersion = !projectVersion.endsWith("SNAPSHOT")
 
 ext {
-    springBootVersion = '3.2.12'
+    springBootVersion = '3.3.13'
     servletVersion = '6.0.0'
 }
 
