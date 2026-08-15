@@ -44,18 +44,21 @@ request.htmx.boosted == request.getHeader('HX-Boosted')
 request.htmx.target  == request.getHeader('HX-Target')
 
 // Check htmx request?
-if (request.htmx as boolean) { // or use request.isHtmx()
+if (request.htmx) { // or request.isHtmx() or htmx
     template = 'book-detail'
 }
 
-// You can set htmx response headers in Grails
+// You can set htmx response headers in Grails/Grace
 
 response.htmx.trigger = 'itemAdded'
+
+// in v0.12+ and v1.2+, you can do this
+htmx.trigger = 'itemAdded'
 ----
 
-If you use https://grails.github.io/legacy-grails-doc/4.0.0/ref/Controllers/respond.html[`respond`] method introduced in Grails 2.3. The respond method tries to produce the most appropriate response for the requested content type (JSON, XML, HTML etc.)
+If you use https://grails.apache.org/docs/4.0.0/ref/Controllers/response.html[`respond`] method introduced in Grails 2.3. The respond method tries to produce the most appropriate response for the requested content type (JSON, XML, HTML etc.)
 
-You can configure https://grails.github.io/legacy-grails-doc/4.0.0/guide/theWebLayer.html#contentNegotiation[Mime Types] for Htmx.
+You can configure https://grails.apache.org/docs/4.0.0/guide/theWebLayer.html#contentNegotiation[Mime Types] for Htmx.
 
 Update the `app/conf/application.yml`:
 
