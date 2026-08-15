@@ -29,6 +29,6 @@ public class HtmxMimeType {
 
     public static final MimeType HTMX = new MimeType("text/html", "htmx");
 
-    public static final MimeType[] HTMX_MIME_TYPES = new MimeType[] { HtmxMimeType.HTMX };
+    public static final MimeType[] HTMX_MIME_TYPES = new MimeType[] { HtmxMimeType.HTMX, MimeType.HTML };
 
 }

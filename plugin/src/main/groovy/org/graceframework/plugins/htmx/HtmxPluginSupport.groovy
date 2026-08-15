@@ -28,9 +28,9 @@ import org.grails.web.servlet.mvc.GrailsWebRequest
 class HtmxPluginSupport {
 
     static void doWithDynamicMethods() {
-        Controller.metaClass.isHtmx = {
-            GrailsWebRequest webRequest = GrailsWebRequest.lookup()
-            return HttpServletRequestExtension.isHtmx(webRequest.currentRequest)
+        Controller.metaClass.getHtmx = {
+            HtmxHandler htmx = new HtmxHandler(delegate.request, delegate.response)
+            return htmx
         }
     }
 
