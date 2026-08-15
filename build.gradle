@@ -56,7 +56,7 @@ dependencies {
     implementation "org.graceframework.plugins:fields"
     implementation "org.graceframework.plugins:hibernate"
     implementation "org.graceframework.plugins:scaffolding"
-    implementation "net.datafaker:datafaker:1.9.0"
+    implementation "net.datafaker:datafaker:2.7.0"
     profile "org.graceframework.profiles:web"
     runtimeOnly "com.h2database:h2"
     runtimeOnly "org.graceframework.plugins:asset-pipeline-plugin:6.2.0"
