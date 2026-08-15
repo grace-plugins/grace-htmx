@@ -6,6 +6,7 @@ View on GitHub: link:{github}/releases/tag/v1.2.0[v1.2.0]
 
 * Update README
 * Add release notes for 1.2
+* Upgrade to Gradle 8.12 link:{github}/issues/20[#20]
 * Upgrade to Datafaker 2.7.0 link:{github}/issues/19[#19]
 * Upgrade to Grace 2023.2.0 link:{github}/issues/18[#18]
 * Migrate HtmxHandler to Jakarta Servlet API
