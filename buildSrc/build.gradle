@@ -1,12 +1,10 @@
 repositories {
     mavenCentral()
-    maven { url "https://repo.gradle.org/gradle/libs-releases" }
-    maven { url "https://plugins.gradle.org/m2/" }
+    gradlePluginPortal()
 }
 
 dependencies {
     implementation "io.github.gradle-nexus:publish-plugin:2.0.0"
-    implementation "org.graceframework:grace-gradle-plugin:2023.3.0"
-    implementation "org.graceframework.plugins:asset-pipeline-gradle:6.3.0"
-    implementation "com.github.erdi:webdriver-binaries-gradle-plugin:3.2"
+    implementation "org.graceframework:grace-gradle-plugin:2024.0.0"
+    implementation "org.graceframework.plugins:asset-pipeline-gradle:7.0.0"
 }

@@ -1,10 +1,12 @@
 package grace.demos
 
+import grails.gorm.transactions.Transactional
 import net.datafaker.Faker
 
-class BootStrap {
+class Bootstrap {
 
-    def init = { servletContext ->
+    @Transactional
+    def init() {
         Faker faker = new Faker()
         (1..100).each {
             String firstName = faker.name().firstName()
@@ -14,7 +16,7 @@ class BootStrap {
         }
     }
 
-    def destroy = {
+    def destroy() {
     }
 
 }

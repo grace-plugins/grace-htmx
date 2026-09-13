@@ -5,7 +5,6 @@ plugins {
     id "io.github.gradle-nexus.publish-plugin"
     id "org.graceframework.grace-web"
     id "org.graceframework.asset-pipeline"
-    id "com.github.erdi.webdriver-binaries"
     id "org.graceframework.grace-gsp"
     id "org.graceframework.grace-doc"
 }
@@ -31,42 +30,27 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     console "org.graceframework:grace-console"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
-    implementation "org.springframework.boot:spring-boot-starter-logging"
-    implementation "org.springframework.boot:spring-boot-starter-tomcat"
-    implementation "org.springframework.boot:spring-boot-starter-validation"
     implementation "org.graceframework:grace-boot"
-    implementation "org.graceframework:grace-core"
-    implementation "org.graceframework:grace-logging"
-    implementation "org.graceframework:grace-plugin-codecs"
-    implementation "org.graceframework:grace-plugin-controllers"
-    implementation "org.graceframework:grace-plugin-databinding"
-    implementation "org.graceframework:grace-plugin-datasource"
-    implementation "org.graceframework:grace-plugin-domain-class"
+    implementation "org.graceframework:grace-boot-async"
+    implementation "org.graceframework:grace-boot-cache"
+    implementation "org.graceframework:grace-boot-events"
+    implementation "org.graceframework:grace-boot-hibernate"
+    implementation "org.graceframework:grace-boot-logging"
+    implementation "org.graceframework:grace-boot-persistence"
+    implementation "org.graceframework:grace-boot-plugin"
+    implementation "org.graceframework:grace-boot-rest"
+    implementation "org.graceframework:grace-boot-validation"
+    implementation "org.graceframework:grace-boot-web"
+    implementation "org.graceframework:grace-plugin-fields"
     implementation "org.graceframework:grace-plugin-gsp"
-    implementation "org.graceframework:grace-plugin-i18n"
-    implementation "org.graceframework:grace-plugin-interceptors"
-    implementation "org.graceframework:grace-plugin-management"
-    implementation "org.graceframework:grace-plugin-rest"
+    implementation "org.graceframework:grace-plugin-scaffolding"
     implementation "org.graceframework:grace-plugin-services"
-    implementation "org.graceframework:grace-plugin-url-mappings"
-    implementation "org.graceframework.plugins:async"
-    implementation "org.graceframework.plugins:cache"
-    implementation "org.graceframework.plugins:events"
-    implementation "org.graceframework.plugins:fields"
-    implementation "org.graceframework.plugins:hibernate"
-    implementation "org.graceframework.plugins:scaffolding"
     implementation "net.datafaker:datafaker:2.7.0"
     profile "org.graceframework.profiles:web"
     runtimeOnly "com.h2database:h2"
-    runtimeOnly "org.graceframework.plugins:asset-pipeline-plugin:6.3.0"
+    runtimeOnly "org.graceframework.plugins:asset-pipeline-plugin:7.0.0"
     testImplementation "org.graceframework:grace-test-support"
-    testImplementation "org.mockito:mockito-core"
-    testImplementation "org.graceframework.plugins:geb"
-    testImplementation "org.seleniumhq.selenium:selenium-remote-driver:4.2.2"
-    testImplementation "org.seleniumhq.selenium:selenium-api:4.2.2"
-    testImplementation "org.seleniumhq.selenium:selenium-support:4.2.2"
-    testRuntimeOnly "org.seleniumhq.selenium:selenium-chrome-driver:4.2.2"
-    testRuntimeOnly "org.seleniumhq.selenium:selenium-firefox-driver:4.2.2"
+    testImplementation "org.graceframework:grace-plugin-geb"
 }
 
 java {
@@ -89,18 +73,6 @@ tasks.withType(GroovyCompile) {
 
 tasks.withType(Test) {
     useJUnitPlatform()
-}
-
-webdriverBinaries {
-    chromedriver {
-        version = '122.0.6260.0'
-        fallbackTo32Bit = true
-    }
-    geckodriver '0.33.0'
-}
-
-tasks.withType(Test) {
-    useJUnitPlatform()
     systemProperty "geb.env", System.getProperty('geb.env')
     systemProperty "geb.build.reportsDir", reporting.file("geb/integrationTest")
     systemProperty 'webdriver.chrome.driver', System.getProperty('webdriver.chrome.driver')
@@ -116,6 +88,14 @@ assets {
         optimizationLevel: 'SIMPLE' //Or ADVANCED or WHITESPACE_ONLY
     ]
     skipNonDigests = true
+}
+
+publishGuide {
+    dependsOn groovydoc
+}
+
+tasks.register('docs') { task ->
+    task.dependsOn groovydoc, publishGuide
 }
 
 nexusPublishing {
