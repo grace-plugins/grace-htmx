@@ -1,11 +1,11 @@
 [![Main branch build status](https://github.com/grace-plugins/grace-htmx/workflows/Grace%20CI/badge.svg?style=flat)](https://github.com/grace-plugins/grace-htmx/actions?query=workflow%3A%Grace+CI%22)
 [![Apache 2.0 license](https://img.shields.io/badge/License-APACHE%202.0-green.svg?logo=APACHE&style=flat)](https://opensource.org/licenses/Apache-2.0)
 [![Latest version on Maven Central](https://img.shields.io/maven-central/v/org.graceframework.plugins/htmx.svg?label=Maven%20Central&logo=apache-maven&style=flat)](https://search.maven.org/search?q=g:org.graceframework.plugins)
-[![Grace Document](https://img.shields.io/badge/Grace_Document-1.3.x-blue?style=flat&logo=asciidoctor&logoColor=E40046&labelColor=ffffff&color=f49b06)](https://plugins.graceframework.org/grace-htmx/1.3.x/)
+[![Grace Document](https://img.shields.io/badge/Grace_Document-2.0.x-blue?style=flat&logo=asciidoctor&logoColor=E40046&labelColor=ffffff&color=f49b06)](https://plugins.graceframework.org/grace-htmx/2.0.x/)
 [![Grace on X](https://img.shields.io/twitter/follow/graceframework?style=social)](https://x.com/graceframework)
 
-[![Groovy Version](https://img.shields.io/badge/Groovy-4.0.27-blue?style=flat&color=4298b8)](https://groovy-lang.org/releasenotes/groovy-4.0.html)
-[![Grace Version](https://img.shields.io/badge/Grace-2023..0-blue?style=flat&color=f49b06)](https://github.com/graceframework/grace-framework/releases/tag/v2023.3.0)
+[![Groovy Version](https://img.shields.io/badge/Groovy-4.0.30-blue?style=flat&color=4298b8)](https://groovy-lang.org/releasenotes/groovy-4.0.html)
+[![Grace Version](https://img.shields.io/badge/Grace-2024.0.0-blue?style=flat&color=f49b06)](https://github.com/graceframework/grace-framework/releases/tag/v2024.0.0)
 
 # Grace with Htmx
 
@@ -13,7 +13,7 @@ Grace Plugin for using Grace/Grails app with htmx.
 
 ## Ducumentation
 
-* [1.3.x](https://plugins.graceframework.org/grace-htmx/1.3.x/)
+* [2.0.x](https://plugins.graceframework.org/grace-htmx/2.0.x/)
 
 ## Usage
 
@@ -169,6 +169,7 @@ To make it easier for users to use and upgrade, Plugin adopts a version policy c
 
 | Plugin Version | Grace Version |
 |----------------|---------------|
+| 2.0.x          | 2024.0+       |
 | 1.0.x          | 2023.0+       |
 | 0.10.x         | 2022.2+       |
 | 0.9.x          | 2022.0+       |
