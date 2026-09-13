@@ -1,5 +1,17 @@
 == What's New
 
+=== 1.3.0
+
+View on GitHub: link:{github}/releases/tag/v1.3.0[v1.3.0]
+
+* Update README
+* Add release notes for 1.3
+* Use NPM to manage and install htmx
+* Update GitHub workflow: remove unused gradle/actions/wrapper-validation
+* Upgrade to Grace Asset Pipeline Plugin 6.3.0 link:{github}/issues/22[#22]
+* Upgrade to Grace 2023.3.0 link:{github}/issues/21[#21]
+* Bump version to 1.3.0-SNAPSHOT
+
 === 1.2.0
 
 View on GitHub: link:{github}/releases/tag/v1.2.0[v1.2.0]
