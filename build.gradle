@@ -48,7 +48,7 @@ dependencies {
     implementation "net.datafaker:datafaker:2.7.0"
     profile "org.graceframework.profiles:web"
     runtimeOnly "com.h2database:h2"
-    runtimeOnly "org.graceframework.plugins:asset-pipeline-plugin:7.0.0"
+    runtimeOnly "org.graceframework.plugins:asset-pipeline-plugin:7.2.0-RC1"
     testImplementation "org.graceframework:grace-test-support"
     testImplementation "org.graceframework:grace-plugin-geb"
 }
@@ -87,6 +87,7 @@ assets {
         targetLanguage: 'ES6', //Can go from ES6 to ES5 for those bleeding edgers
         optimizationLevel: 'SIMPLE' //Or ADVANCED or WHITESPACE_ONLY
     ]
+    configOptions = [enableES6: true]
     skipNonDigests = true
 }
 
