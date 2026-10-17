@@ -5,6 +5,6 @@ repositories {
 
 dependencies {
     implementation "io.github.gradle-nexus:publish-plugin:2.0.0"
-    implementation "org.graceframework:grace-gradle-plugin:2024.0.0"
+    implementation "org.graceframework:grace-gradle-plugin:2024.1.2"
     implementation "org.graceframework.plugins:asset-pipeline-gradle:7.0.0"
 }
