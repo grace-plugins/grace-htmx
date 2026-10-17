@@ -9,8 +9,8 @@ plugins {
     id "org.graceframework.grace-doc"
 }
 
-group "grace.demos"
-version projectVersion
+group = "grace.demos"
+version = projectVersion
 
 repositories {
     mavenCentral()
